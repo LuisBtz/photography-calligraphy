@@ -1,131 +1,57 @@
 import Image from "next/image"
 import Link from "next/link"
 
+const galleryImages = [
+  {
+    src: "/placeholder.svg?height=400&width=600",
+    alt: "Fotografía de retrato",
+  },
+  {
+    src: "/placeholder.svg?height=600&width=400",
+    alt: "Fotografía de boda",
+  },
+  {
+    src: "/placeholder.svg?height=400&width=400",
+    alt: "Fotografía de producto",
+  },
+  {
+    src: "/placeholder.svg?height=600&width=800",
+    alt: "Fotografía de evento",
+  },
+  {
+    src: "/placeholder.svg?height=500&width=700",
+    alt: "Fotografía de paisaje",
+  },
+  {
+    src: "/placeholder.svg?height=700&width=500",
+    alt: "Fotografía de arquitectura",
+  },
+]
+
 export default function GallerySection() {
   return (
     <section className="w-full bg-white py-20 md:py-32">
       <div className="max-w-[1100px] mx-auto px-4">
+        {/* Section Title */}
+        <h2 className="font-condensed-black text-black text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight mb-12 text-center">
+          Mi Galería Destacada
+        </h2>
+
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[10px]">
-          {/* Column 1 */}
-          <div className="space-y-[10px]">
-            <div className="relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryImages.slice(0, 6).map((image, index) => (
+            <div
+              key={index}
+              className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
               <Image
-                src="/placeholder.svg?height=320&width=300"
-                alt="Fotografía 1"
-                width={300}
-                height={320}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                src={image.src || "/placeholder.svg"}
+                alt={image.alt}
+                fill
+                className="object-cover hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=450&width=300"
-                alt="Fotografía 2"
-                width={300}
-                height={450}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=280&width=300"
-                alt="Fotografía 3"
-                width={300}
-                height={280}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=380&width=300"
-                alt="Fotografía 4"
-                width={300}
-                height={380}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-
-          {/* Column 2 */}
-          <div className="space-y-[10px]">
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=400&width=300"
-                alt="Fotografía 5"
-                width={300}
-                height={400}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=300&width=300"
-                alt="Fotografía 6"
-                width={300}
-                height={300}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=420&width=300"
-                alt="Fotografía 7"
-                width={300}
-                height={420}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=350&width=300"
-                alt="Fotografía 8"
-                width={300}
-                height={350}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-
-          {/* Column 3 */}
-          <div className="space-y-[10px]">
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=360&width=300"
-                alt="Fotografía 9"
-                width={300}
-                height={360}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=480&width=300"
-                alt="Fotografía 10"
-                width={300}
-                height={480}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=260&width=300"
-                alt="Fotografía 11"
-                width={300}
-                height={260}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=340&width=300"
-                alt="Fotografía 12"
-                width={300}
-                height={340}
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Description */}
@@ -142,12 +68,12 @@ export default function GallerySection() {
         </div>
 
         {/* CTA */}
-        <div className="mt-8 text-center">
+        <div className="mt-16 text-center">
           <Link
             href="/galeria"
             className="inline-block bg-black text-white font-bold text-base px-8 py-4 hover:bg-gray-800 transition-colors duration-200"
           >
-            See the full gallery
+            Ver la galería completa
           </Link>
         </div>
       </div>
