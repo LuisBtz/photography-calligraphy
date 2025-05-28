@@ -6,11 +6,11 @@ export default function HeroSection() {
     <section
       className="relative w-full bg-cover bg-center bg-no-repeat py-20 md:py-32"
       style={{
-        backgroundImage: "url('/placeholder.svg?height=800&width=1920')",
+        backgroundImage: "url('/home/hero-bg.jpg')",
       }}
     >
       {/* Background overlay for better text readability if needed */}
-      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
 
       <div className="relative max-w-[1100px] mx-auto px-4">
         <div className="grid grid-cols-6 md:grid-cols-12 gap-4 md:gap-8">
@@ -57,7 +57,7 @@ export default function HeroSection() {
           <div className="col-span-6 md:col-span-5 mt-8 md:mt-0">
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full">
               <Image
-                src="/placeholder.svg?height=500&width=400"
+                src="/home/main.webp"
                 alt="Fotografía profesional"
                 fill
                 className="object-cover"

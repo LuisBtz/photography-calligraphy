@@ -24,7 +24,7 @@ export default function Navigation() {
           {/* Logo - Now clickable to home */}
           <Link href="/" className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200">
             <Image
-              src="/placeholder.svg?height=50&width=50"
+              src="/logo.svg"
               alt="Logo"
               width={50}
               height={50}
