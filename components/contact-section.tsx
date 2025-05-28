@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function ContactSection() {
   return (
-    <section className="w-full bg-gray-50 py-20 md:py-32">
+    <section className="w-full py-20 md:py-32" style={{ backgroundColor: "#E2FFF7" }}>
       <div className="max-w-[1100px] mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
