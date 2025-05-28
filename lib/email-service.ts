@@ -19,6 +19,12 @@ interface EmailData {
 
 export async function sendContactEmail(data: EmailData) {
   try {
+    console.log("Attempting to send email with data:", { 
+      nombre: data.nombre, 
+      email: data.email, 
+      formType: data.formType 
+    })
+
     // Send notification email to your Gmail
     const notificationResult = await resend.emails.send({
       from: "Formulario Web <noreply@luisbtz.com>", // Professional sender but replies go to Gmail
@@ -28,14 +34,18 @@ export async function sendContactEmail(data: EmailData) {
       html: generateNotificationEmail(data),
     })
 
+    console.log("Notification email sent:", notificationResult)
+
     // Send confirmation email to client
     const confirmationResult = await resend.emails.send({
-      from: "Luis Betancourt <noreply@luisbtz.com>", // Professional branding
+      from: "Luis Benítez <noreply@luisbtz.com>", // Updated name
       to: [data.email],
       replyTo: "luisbttf@gmail.com", // Replies go to your Gmail
       subject: "Confirmación de mensaje recibido - Fotografía y Caligrafía",
       html: generateConfirmationEmail(data),
     })
+
+    console.log("Confirmation email sent:", confirmationResult)
 
     return {
       success: true,
@@ -205,7 +215,7 @@ function generateConfirmationEmail(data: EmailData): string {
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Mensaje recibido - Luis Betancourt</title>
+      <title>Mensaje recibido - Luis Benítez</title>
       <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -222,7 +232,7 @@ function generateConfirmationEmail(data: EmailData): string {
       <div class="container">
         <div class="header">
           <h1>📸 ¡Gracias por contactarme!</h1>
-          <p>Luis Betancourt - Fotografía y Caligrafía</p>
+          <p>Luis Benítez - Fotografía y Caligrafía</p>
         </div>
         
         <div class="content">
@@ -256,7 +266,7 @@ function generateConfirmationEmail(data: EmailData): string {
           <p>¡Espero trabajar contigo pronto y crear algo extraordinario juntos!</p>
           
           <p>Saludos cordiales,<br>
-          <strong>Luis Betancourt</strong><br>
+          <strong>Luis Benítez</strong><br>
           📸 Fotografía Profesional<br>
           ✍️ Caligrafía Artística<br>
           🌐 <a href="https://luisbtz.com" style="color: #000;">luisbtz.com</a></p>
@@ -274,7 +284,7 @@ function generateConfirmationEmail(data: EmailData): string {
           <p><strong>Para contacto directo:</strong> luisbttf@gmail.com</p>
           <p>📍 Monterrey, Nuevo León, México</p>
           <p style="font-size: 11px; margin-top: 10px;">
-            © 2024 Luis Betancourt. Todos los derechos reservados.<br>
+            © 2024 Luis Benítez. Todos los derechos reservados.<br>
             <a href="${baseUrl}/privacidad" style="color: #ccc;">Política de Privacidad</a> | 
             <a href="${baseUrl}/terminos" style="color: #ccc;">Términos de Uso</a>
           </p>
