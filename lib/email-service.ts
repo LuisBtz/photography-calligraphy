@@ -19,18 +19,20 @@ interface EmailData {
 
 export async function sendContactEmail(data: EmailData) {
   try {
-    // Send notification email to you
+    // Send notification email to your Gmail
     const notificationResult = await resend.emails.send({
-      from: "Formulario Web <contacto@luisbtz.com>", // Using your custom domain
-      to: ["luisbttf@gmail.com"],
+      from: "Formulario Web <noreply@luisbtz.com>", // Professional sender but replies go to Gmail
+      to: ["luisbttf@gmail.com"], // Your Gmail address
+      replyTo: data.email, // Client can reply directly to the person who contacted you
       subject: `Nueva consulta - ${data.formType === "contact" ? "Contacto" : data.formType === "quote" ? "Cotización" : "Servicio"}`,
       html: generateNotificationEmail(data),
     })
 
     // Send confirmation email to client
     const confirmationResult = await resend.emails.send({
-      from: "Luis Betancourt <luis@luisbtz.com>", // Using your custom domain with your name
+      from: "Luis Betancourt <noreply@luisbtz.com>", // Professional branding
       to: [data.email],
+      replyTo: "luisbttf@gmail.com", // Replies go to your Gmail
       subject: "Confirmación de mensaje recibido - Fotografía y Caligrafía",
       html: generateConfirmationEmail(data),
     })
@@ -243,6 +245,7 @@ function generateConfirmationEmail(data: EmailData): string {
           <div class="highlight">
             <p><strong>📞 ¿Necesitas hablar urgentemente?</strong></p>
             <p>Puedes llamarme al <strong>+52 81 1234 5678</strong></p>
+            <p>O escríbeme directamente a: <strong>luisbttf@gmail.com</strong></p>
           </div>
           
           <div style="text-align: center; margin: 25px 0;">
