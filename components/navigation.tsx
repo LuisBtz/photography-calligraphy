@@ -26,9 +26,9 @@ export default function Navigation() {
             <Image
               src="/logo.svg"
               alt="Logo"
-              width={50}
-              height={50}
-              className="w-12 h-12 drop-shadow-sm"
+              width={37}
+              height={40}
+              className=" drop-shadow-sm"
             />
           </Link>
 

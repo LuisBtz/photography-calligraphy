@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function AboutSection() {
   return (
-    <section className="w-full bg-white py-20 md:py-32">
+    <section className="w-full bg-gray-50 py-20 md:py-32">
       <div className="max-w-[1100px] mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
@@ -35,7 +35,7 @@ export default function AboutSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 py-8">
               <div className="text-center">
-                <div className="font-condensed-black text-black text-2xl md:text-3xl lg:text-4xl">500+</div>
+                <div className="font-condensed-black text-black text-2xl md:text-3xl lg:text-4xl">50+</div>
                 <div className="font-regular text-gray-600 text-sm">Proyectos completados</div>
               </div>
               <div className="text-center">

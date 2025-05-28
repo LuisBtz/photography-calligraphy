@@ -10,7 +10,7 @@ export default function HeroSection() {
       }}
     >
       {/* Background overlay for better text readability if needed */}
-      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-50"></div>
 
       <div className="relative max-w-[1100px] mx-auto px-4">
         <div className="grid grid-cols-6 md:grid-cols-12 gap-4 md:gap-8">
