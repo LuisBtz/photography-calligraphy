@@ -56,7 +56,7 @@ export default function FAQPage() {
                   Contactar ahora
                 </Link>
                 <Link
-                  href="tel:+528112345678"
+                  href="tel:+528116938801"
                   className="border-2 border-black text-black font-bold text-base px-8 py-4 hover:bg-black hover:text-white transition-colors duration-200"
                 >
                   Llamar directamente

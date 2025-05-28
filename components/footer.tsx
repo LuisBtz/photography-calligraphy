@@ -25,7 +25,7 @@ export default function Footer() {
             {/* Social Media Links */}
             <div className="flex space-x-4">
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/btz_luis/"
                 className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 aria-label="Instagram"
               >
@@ -34,7 +34,7 @@ export default function Footer() {
                 </svg>
               </Link>
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/luis.bttz/"
                 className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 aria-label="Facebook"
               >
@@ -43,7 +43,7 @@ export default function Footer() {
                 </svg>
               </Link>
               <Link
-                href="https://pinterest.com"
+                href="https://mx.pinterest.com/luisbtzluis/"
                 className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 aria-label="Pinterest"
               >
@@ -176,10 +176,10 @@ export default function Footer() {
                   />
                 </svg>
                 <Link
-                  href="mailto:hola@tuemail.com"
+                  href="mailto:luisbttf@gmail.com"
                   className="font-regular text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  hola@tuemail.com
+                  luisbttf@gmail.com
                 </Link>
               </div>
               <div className="flex items-center space-x-3">
@@ -192,10 +192,10 @@ export default function Footer() {
                   />
                 </svg>
                 <Link
-                  href="tel:+528112345678"
+                  href="tel:+528116938801"
                   className="font-regular text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  +52 81 1234 5678
+                  +52 81 1693 8801
                 </Link>
               </div>
             </div>

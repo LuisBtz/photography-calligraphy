@@ -19,10 +19,10 @@ interface EmailData {
 
 export async function sendContactEmail(data: EmailData) {
   try {
-    console.log("Attempting to send email with data:", { 
-      nombre: data.nombre, 
-      email: data.email, 
-      formType: data.formType 
+    console.log("Attempting to send email with data:", {
+      nombre: data.nombre,
+      email: data.email,
+      formType: data.formType,
     })
 
     // Send notification email to your Gmail
@@ -208,8 +208,8 @@ function generateNotificationEmail(data: EmailData): string {
 }
 
 function generateConfirmationEmail(data: EmailData): string {
-  const baseUrl = data.pageUrl.includes('localhost') ? 'http://localhost:3000' : 'https://luisbtz.com'
-  
+  const baseUrl = data.pageUrl.includes("localhost") ? "http://localhost:3000" : "https://luisbtz.com"
+
   return `
     <!DOCTYPE html>
     <html>
@@ -242,7 +242,7 @@ function generateConfirmationEmail(data: EmailData): string {
             <p><strong>✅ He recibido tu mensaje y te responderé en menos de 24 horas.</strong></p>
           </div>
           
-          <p>Tu consulta sobre <strong>${data.servicio || 'nuestros servicios'}</strong> es muy importante para mí. Estoy revisando los detalles que me compartiste y pronto te contactaré con una propuesta personalizada.</p>
+          <p>Tu consulta sobre <strong>${data.servicio || "nuestros servicios"}</strong> es muy importante para mí. Estoy revisando los detalles que me compartiste y pronto te contactaré con una propuesta personalizada.</p>
           
           <p><strong>Mientras tanto, puedes:</strong></p>
           <ul>
@@ -254,7 +254,7 @@ function generateConfirmationEmail(data: EmailData): string {
           
           <div class="highlight">
             <p><strong>📞 ¿Necesitas hablar urgentemente?</strong></p>
-            <p>Puedes llamarme al <strong>+52 81 1234 5678</strong></p>
+            <p>Puedes llamarme al <strong>+52 81 1693 8801</strong></p>
             <p>O escríbeme directamente a: <strong>luisbttf@gmail.com</strong></p>
           </div>
           
@@ -273,9 +273,9 @@ function generateConfirmationEmail(data: EmailData): string {
           
           <div class="social-links">
             <p><strong>Sígueme en redes sociales:</strong></p>
-            <a href="https://instagram.com" style="color: #000;">📱 Instagram</a>
-            <a href="https://facebook.com" style="color: #000;">📘 Facebook</a>
-            <a href="https://pinterest.com" style="color: #000;">📌 Pinterest</a>
+            <a href="https://www.instagram.com/btz_luis/" style="color: #000;">📱 Instagram</a>
+            <a href="https://www.facebook.com/luis.bttz/" style="color: #000;">📘 Facebook</a>
+            <a href="https://mx.pinterest.com/luisbtzluis/" style="color: #000;">📌 Pinterest</a>
           </div>
         </div>
         

@@ -128,10 +128,10 @@ export default function PrivacidadPage() {
                   </p>
                   <div className="bg-gray-50 p-6 space-y-2">
                     <p className="font-regular text-gray-600">
-                      <strong>Email:</strong> hola@tuemail.com
+                      <strong>Email:</strong> luisbttf@gmail.com
                     </p>
                     <p className="font-regular text-gray-600">
-                      <strong>Teléfono:</strong> +52 81 1234 5678
+                      <strong>Teléfono:</strong> +52 81 1693 8801
                     </p>
                     <p className="font-regular text-gray-600">
                       <strong>Dirección:</strong> Monterrey, Nuevo León, México

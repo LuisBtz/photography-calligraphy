@@ -51,10 +51,10 @@ export default function ContactoPage() {
                 <h3 className="font-condensed-black text-black text-xl">Llámame</h3>
                 <p className="font-regular text-gray-600">Para consultas rápidas o urgentes</p>
                 <a
-                  href="tel:+528112345678"
+                  href="tel:+528116938801"
                   className="font-bold text-black hover:underline transition-colors duration-200"
                 >
-                  +52 81 1234 5678
+                  +52 81 1693 8801
                 </a>
               </div>
 
@@ -73,10 +73,10 @@ export default function ContactoPage() {
                 <h3 className="font-condensed-black text-black text-xl">Escríbeme</h3>
                 <p className="font-regular text-gray-600">Para proyectos detallados</p>
                 <a
-                  href="mailto:hola@tuemail.com"
+                  href="mailto:luisbttf@gmail.com"
                   className="font-bold text-black hover:underline transition-colors duration-200"
                 >
-                  hola@tuemail.com
+                  luisbttf@gmail.com
                 </a>
               </div>
 
@@ -191,6 +191,11 @@ export default function ContactoPage() {
                       <div className="flex justify-between">
                         <span>Domingos:</span>
                         <span>Solo emergencias</span>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <p><strong>Contacto directo:</strong></p>
+                        <p>📞 +52 81 1693 8801</p>
+                        <p>📧 luisbttf@gmail.com</p>
                       </div>
                     </div>
                   </div>
