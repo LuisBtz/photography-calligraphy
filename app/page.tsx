@@ -6,10 +6,12 @@ import ServicesSection from "@/components/services-section"
 import ContactSection from "@/components/contact-section"
 import BlogSection from "@/components/blog-section"
 import Footer from "@/components/footer"
+import ScrollToTop from "@/components/scroll-to-top"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      <ScrollToTop />
       <Navigation />
       <main className="pt-20">
         <HeroSection />

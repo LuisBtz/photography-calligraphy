@@ -1,54 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
+import { getAllBlogPosts } from "@/lib/blog-loader"
 
 export default function BlogSection() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Consejos para una sesión de retratos perfecta",
-      description:
-        "Descubre las técnicas y preparativos esenciales para capturar retratos que transmitan emociones auténticas y reflejen la personalidad única de cada persona.",
-      date: "15 Enero 2024",
-      readTime: "5 min lectura",
-      thumbnail: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      id: 2,
-      title: "El arte de la caligrafía moderna en eventos",
-      description:
-        "Explora cómo la caligrafía contemporánea puede transformar invitaciones de boda y eventos especiales, añadiendo un toque personal y elegante.",
-      date: "8 Enero 2024",
-      readTime: "7 min lectura",
-      thumbnail: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      id: 3,
-      title: "Fotografía de producto: iluminación y composición",
-      description:
-        "Aprende las técnicas fundamentales de iluminación y composición que harán que tus productos destaquen y generen mayor impacto visual.",
-      date: "2 Enero 2024",
-      readTime: "6 min lectura",
-      thumbnail: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      id: 4,
-      title: "Tendencias en caligrafía para 2024",
-      description:
-        "Un recorrido por las tendencias más actuales en caligrafía artística, desde estilos minimalistas hasta técnicas mixtas que combinan tradición e innovación.",
-      date: "28 Diciembre 2023",
-      readTime: "4 min lectura",
-      thumbnail: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      id: 5,
-      title: "Cómo prepararse para una sesión fotográfica",
-      description:
-        "Guía completa para clientes sobre cómo prepararse antes de una sesión, desde la elección de vestuario hasta consejos para sentirse cómodo frente a la cámara.",
-      date: "20 Diciembre 2023",
-      readTime: "8 min lectura",
-      thumbnail: "/placeholder.svg?height=200&width=300",
-    },
-  ]
+  const blogPosts = getAllBlogPosts().slice(0, 5) // Get first 5 published posts
 
   return (
     <section className="w-full bg-white py-20 md:py-32">
@@ -61,11 +16,11 @@ export default function BlogSection() {
         {/* Blog Posts Grid */}
         <div className="space-y-12">
           {blogPosts.map((post, index) => (
-            <article key={post.id} className="group">
+            <article key={post.slug} className="group">
               <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-8">
                 {/* Thumbnail */}
                 <div className="col-span-6 md:col-span-4">
-                  <Link href={`/blog/${post.id}`}>
+                  <Link href={`/blog/${post.slug}`}>
                     <div className="relative aspect-[3/2] overflow-hidden">
                       <Image
                         src={post.thumbnail || "/placeholder.svg"}
@@ -92,7 +47,7 @@ export default function BlogSection() {
                   </div>
 
                   {/* Title */}
-                  <Link href={`/blog/${post.id}`}>
+                  <Link href={`/blog/${post.slug}`}>
                     <h3 className="font-condensed-black text-black text-xl md:text-2xl lg:text-[28px] leading-tight group-hover:underline transition-all duration-200">
                       {post.title}
                     </h3>
@@ -106,7 +61,7 @@ export default function BlogSection() {
                   {/* Read More Link */}
                   <div className="pt-2">
                     <Link
-                      href={`/blog/${post.id}`}
+                      href={`/blog/${post.slug}`}
                       className="font-bold text-black text-base hover:underline transition-all duration-200 inline-flex items-center"
                     >
                       Leer más

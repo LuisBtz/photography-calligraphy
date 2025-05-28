@@ -3,7 +3,8 @@
 import type React from "react"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { submitQuoteForm } from "@/app/actions/quote"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,17 @@ export default function ContactSection() {
     descripcion: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null
+    message: string
+  }>({ type: null, message: "" })
+  const [pageUrl, setPageUrl] = useState("")
+
+  useEffect(() => {
+    setPageUrl(window.location.href)
+  }, [])
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -22,10 +34,48 @@ export default function ContactSection() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: "" })
+
+    // Create FormData
+    const formDataObj = new FormData()
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataObj.append(key, value)
+    })
+    formDataObj.append("pageUrl", pageUrl)
+
+    try {
+      const result = await submitQuoteForm(formDataObj)
+
+      if (result.success) {
+        setSubmitStatus({
+          type: "success",
+          message: result.message,
+        })
+        // Reset form
+        setFormData({
+          nombre: "",
+          email: "",
+          servicio: "",
+          fecha: "",
+          descripcion: "",
+        })
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.message,
+        })
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Hubo un error al enviar el mensaje. Por favor intenta de nuevo.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -48,6 +98,19 @@ export default function ContactSection() {
             <h2 className="font-condensed-black text-black text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight mb-8">
               Tu proyecto comienza aquí
             </h2>
+
+            {/* Submit Status */}
+            {submitStatus.type && (
+              <div
+                className={`p-4 rounded mb-6 ${
+                  submitStatus.type === "success"
+                    ? "bg-green-50 text-green-800 border border-green-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -97,8 +160,11 @@ export default function ContactSection() {
                   required
                 >
                   <option value="">Selecciona un servicio</option>
-                  <option value="fotografia">Fotografía</option>
-                  <option value="caligrafia">Caligrafía</option>
+                  <option value="sesiones">Sesiones de fotografía</option>
+                  <option value="boda-foto">Fotografía para boda</option>
+                  <option value="boda-video">Fotografía y video para boda</option>
+                  <option value="producto">Fotografía de producto</option>
+                  <option value="caligrafia">Caligrafía artística</option>
                 </select>
               </div>
 
@@ -138,9 +204,10 @@ export default function ContactSection() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="bg-black text-white font-bold text-base px-8 py-4 hover:bg-gray-800 transition-colors duration-200"
+                  disabled={isSubmitting}
+                  className="bg-black text-white font-bold text-base px-8 py-4 hover:bg-gray-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Enviar
+                  {isSubmitting ? "Enviando..." : "Enviar"}
                 </button>
               </div>
             </form>

@@ -2,56 +2,10 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
+import { getAllServices } from "@/lib/markdown-loader"
 
 export default function FotografiaPage() {
-  const services = [
-    {
-      id: "sesiones",
-      title: "Sesiones de fotografía",
-      description:
-        "Retratos personales, familiares y corporativos que capturan tu esencia única. Cada sesión es una experiencia personalizada donde tu personalidad brilla a través de cada imagen.",
-      features: ["Sesión de 1-2 horas", "Locación a elegir", "30+ fotos editadas", "Galería online privada"],
-      price: "Desde $2,500 MXN",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/fotografia/sesiones",
-    },
-    {
-      id: "boda-foto",
-      title: "Fotografía para boda",
-      description:
-        "Documenta cada momento especial de tu gran día con un estilo artístico y emotivo. Desde los preparativos hasta la celebración, cada instante será preservado para siempre.",
-      features: [
-        "Cobertura completa del evento",
-        "Fotos de preparativos",
-        "Ceremonia y recepción",
-        "200+ fotos editadas",
-      ],
-      price: "Desde $8,500 MXN",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/fotografia/boda-foto",
-    },
-    {
-      id: "boda-video",
-      title: "Fotografía y video para boda",
-      description:
-        "La combinación perfecta de fotografía profesional y videografía cinematográfica. Trabajamos en equipo con un videógrafo experto para capturar tu historia completa.",
-      features: ["Fotografía + videografía", "Video cinematográfico", "Highlight reel", "Cobertura dual completa"],
-      price: "Desde $15,000 MXN",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/fotografia/boda-video",
-      badge: "Más popular",
-    },
-    {
-      id: "producto",
-      title: "Fotografía de producto",
-      description:
-        "Imágenes profesionales que hacen que tus productos destaquen y vendan más. Perfecto para e-commerce, catálogos y marketing digital con la calidad que tu marca merece.",
-      features: ["Estudio profesional", "Múltiples ángulos", "Fondo blanco/personalizado", "Retoque profesional"],
-      price: "Desde $1,800 MXN",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/fotografia/producto",
-    },
-  ]
+  const services = getAllServices().filter((service) => service.category === "fotografia")
 
   return (
     <div className="min-h-screen">
@@ -81,22 +35,22 @@ export default function FotografiaPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {services.map((service, index) => (
                 <div
-                  key={service.id}
+                  key={service.slug}
                   className="bg-white overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Service Image */}
                   <div className="relative">
                     <div className="aspect-[3/2] relative">
                       <Image
-                        src={service.image || "/placeholder.svg"}
+                        src="/placeholder.svg?height=400&width=600"
                         alt={service.title}
                         fill
                         className="object-cover"
                       />
                     </div>
-                    {service.badge && (
+                    {service.featured && (
                       <div className="absolute top-4 right-4 bg-black text-white font-bold text-sm px-3 py-1">
-                        {service.badge}
+                        Más popular
                       </div>
                     )}
                   </div>
@@ -116,35 +70,21 @@ export default function FotografiaPage() {
                     {/* Description */}
                     <p className="font-regular text-gray-600 text-base leading-relaxed">{service.description}</p>
 
-                    {/* Features */}
-                    <div className="space-y-3">
-                      <h4 className="font-bold text-black text-base">Incluye:</h4>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center space-x-3">
-                            <svg className="w-4 h-4 text-black flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                              <path
-                                fillRule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                            <span className="font-regular text-gray-600 text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    {/* Duration */}
+                    <div className="text-sm text-gray-500">
+                      <span className="font-bold">Duración:</span> {service.duration}
                     </div>
 
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-3 pt-4">
                       <Link
-                        href={service.link}
+                        href={`/fotografia/${service.slug}`}
                         className="flex-1 bg-black text-white font-bold text-base px-6 py-3 text-center hover:bg-gray-800 transition-colors duration-200"
                       >
                         Ver detalles
                       </Link>
                       <Link
-                        href="/contacto"
+                        href={`/fotografia/${service.slug}#reservar`}
                         className="flex-1 border-2 border-black text-black font-bold text-base px-6 py-3 text-center hover:bg-black hover:text-white transition-colors duration-200"
                       >
                         Cotizar
@@ -214,10 +154,11 @@ export default function FotografiaPage() {
                       required
                     >
                       <option value="">Selecciona un servicio</option>
-                      <option value="sesiones">Sesiones de fotografía</option>
-                      <option value="boda-foto">Fotografía para boda</option>
-                      <option value="boda-video">Fotografía y video para boda</option>
-                      <option value="producto">Fotografía de producto</option>
+                      {services.map((service) => (
+                        <option key={service.slug} value={service.slug}>
+                          {service.title}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
