@@ -3,23 +3,37 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Mi Sitio Web - Fotografía y Blog Personal",
+  title: "Luis Betancourt - Fotografía y Caligrafía en Monterrey",
   description:
-    "Sitio web personal de fotografía y blog. Descubre mi trabajo fotográfico y lee mis últimas publicaciones.",
-  keywords: "fotografía, blog, personal, arte, creatividad",
-  authors: [{ name: "Tu Nombre" }],
+    "Fotografía profesional y caligrafía artística en Monterrey. Sesiones personales, bodas, productos y eventos especiales. Capturando momentos únicos con estilo y elegancia.",
+  keywords: "fotografía monterrey, caligrafía, bodas, retratos, productos, Luis Betancourt",
+  authors: [{ name: "Luis Betancourt" }],
+  metadataBase: new URL("https://luisbtz.com"),
   openGraph: {
-    title: "Mi Sitio Web - Fotografía y Blog Personal",
+    title: "Luis Betancourt - Fotografía y Caligrafía en Monterrey",
     description:
-      "Sitio web personal de fotografía y blog. Descubre mi trabajo fotográfico y lee mis últimas publicaciones.",
+      "Fotografía profesional y caligrafía artística en Monterrey. Sesiones personales, bodas, productos y eventos especiales.",
     type: "website",
     locale: "es_ES",
+    url: "https://luisbtz.com",
+    siteName: "Luis Betancourt Fotografía",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mi Sitio Web - Fotografía y Blog Personal",
+    title: "Luis Betancourt - Fotografía y Caligrafía en Monterrey",
     description:
-      "Sitio web personal de fotografía y blog. Descubre mi trabajo fotográfico y lee mis últimas publicaciones.",
+      "Fotografía profesional y caligrafía artística en Monterrey. Sesiones personales, bodas, productos y eventos especiales.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
     generator: 'v0.dev'
 }
