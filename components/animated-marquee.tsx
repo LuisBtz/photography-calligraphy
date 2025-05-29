@@ -2,14 +2,14 @@
 
 export default function AnimatedMarquee() {
   const marqueeItems = [
-    "Fotografía profesional de bodas",
-    "Caligrafía moderna para eventos",
-    "Sesiones de retratos únicos",
-    "Videografía cinematográfica",
-    "Diseño gráfico personalizado",
-    "Más de 100 bodas capturadas",
-    "Servicio premium en toda España",
-    "Arte visual que cuenta historias",
+    "Imágenes que elevan tu marca",
+    "Retratos profesionales con intención clara",
+    "Fotografía de bodas con elegancia",
+    "Tu producto en su mejor ángulo",
+    "Momentos auténticos, memorias eternas",
+    "Calidad visual para destacar tu marca",
+    "Historias de amor en cada foto",
+    "Letras que comunican con arte",
   ]
 
   return (
