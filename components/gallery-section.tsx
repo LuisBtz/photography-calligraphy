@@ -3,24 +3,24 @@ import Link from "next/link"
 
 const galleryImages = [
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Fotografía de retrato",
+    src: "/photos/benito.webp",
+    alt: "Benito bostezando",
   },
   {
-    src: "/placeholder.svg?height=600&width=400",
-    alt: "Fotografía de boda",
+    src: "/photos/J&V.webp",
+    alt: "Sesión de maternidad",
   },
   {
-    src: "/placeholder.svg?height=400&width=400",
+    src: "/photos/orquidea.webp",
     alt: "Fotografía de producto",
   },
   {
-    src: "/placeholder.svg?height=600&width=800",
+    src: "/photos/macy-musica.webp",
     alt: "Fotografía de evento",
   },
   {
-    src: "/placeholder.svg?height=500&width=700",
-    alt: "Fotografía de paisaje",
+    src: "/photos/migos.webp",
+    alt: "Amigos hablando",
   },
   {
     src: "/placeholder.svg?height=700&width=500",
@@ -33,9 +33,9 @@ export default function GallerySection() {
     <section className="w-full bg-white py-20 md:py-32">
       <div className="max-w-[1100px] mx-auto px-4">
         {/* Section Title */}
-        <h2 className="font-condensed-black text-black text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight mb-12 text-center">
+        {/* <h2 className="font-condensed-black text-black text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight mb-12 text-center">
           Mi Galería Destacada
-        </h2>
+        </h2> */}
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

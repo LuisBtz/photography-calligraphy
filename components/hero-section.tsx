@@ -25,7 +25,7 @@ export default function HeroSection() {
             <div className="space-y-4">
               <div className="space-y-3">
                 <div className="w-full h-px bg-black"></div>
-                <p className="font-regular text-black text-lg sm:text-xl md:text-2xl lg:text-[24px] text-center">
+                <p className="font-regular text-black text-lg sm:text-xl md:text-2xl lg:text-[24px] text-left">
                   Captura emociones, escribe memorias.
                 </p>
                 <div className="w-full h-px bg-black"></div>
