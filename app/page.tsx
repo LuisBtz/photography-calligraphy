@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation"
 import HeroSection from "@/components/hero-section"
+import AnimatedMarquee from "@/components/animated-marquee"
 import GallerySection from "@/components/gallery-section"
 import AboutSection from "@/components/about-section"
 import ServicesSection from "@/components/services-section"
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Navigation />
       <main className="pt-20">
         <HeroSection />
+        <AnimatedMarquee />
         <GallerySection />
         <AboutSection />
         <ServicesSection />
