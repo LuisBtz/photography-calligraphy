@@ -1,6 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
+import GoogleAnalytics from "@/components/google-analytics"
 import "./globals.css"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
   title: "Luis Benítez - Fotografía y Caligrafía en Monterrey",
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
     icon: "/favicon.png", // Ruta al favicon para la mayoría de los navegadores
     shortcut: "/favicon.png", // Para compatibilidad con algunos navegadores antiguos
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -49,7 +51,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className="font-helvetica">{children}</body>
+      <body className="font-helvetica">
+        <GoogleAnalytics />
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      </body>
     </html>
   )
 }
