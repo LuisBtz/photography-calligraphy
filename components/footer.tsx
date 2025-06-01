@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-4 space-y-6">
             <Link href="/" className="inline-block">
               <Image
-                src="/placeholder.svg?height=50&width=50"
+                src="/logo-blanco.svg?height=50&width=50"
                 alt="Logo"
                 width={50}
                 height={50}

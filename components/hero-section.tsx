@@ -18,7 +18,7 @@ export default function HeroSection() {
           <div className="col-span-6 space-y-6 md:space-y-8">
             {/* Nombre del fotógrafo */}
             <div className="inline-block">
-              <span className="bg-black text-white px-4 py-2 text-sm md:text-base font-black">Luis Benítez</span>
+              <span className="bg-black text-white px-4 py-2 text-sm md:text-base font-regular">Luis Benítez</span>
             </div>
 
             {/* Main Heading */}
@@ -62,10 +62,10 @@ export default function HeroSection() {
           <div className="col-span-6 md:col-span-5 mt-8 md:mt-0">
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full overflow-hidden">
               <Image
-                src="/home/hero-2.webp"
+                src="/home/about-1.webp"
                 alt="Fotografía profesional"
                 fill
-                className="object-cover filter grayscale transition-all duration-500 hover:grayscale-0"
+                className="object-cover"
               />
             </div>
           </div>

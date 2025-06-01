@@ -139,7 +139,7 @@ export default function ContactSection() {
           <div className="relative">
             <div className="aspect-[4/5] relative">
               <Image
-                src="/placeholder.svg?height=600&width=480&query=photographer working with camera"
+                src="/home/contacto-1.webp"
                 alt="Contacto - Fotografía profesional"
                 fill
                 className="object-cover"

@@ -100,7 +100,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="aspect-[4/5] relative">
               <Image
-                src="/placeholder.svg?height=600&width=480&query=professional photographer portrait"
+                src="/home/hero-2.webp"
                 alt="Luis Benítez - Fotógrafo profesional"
                 fill
                 className="object-cover"

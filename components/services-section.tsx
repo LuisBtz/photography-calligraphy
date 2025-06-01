@@ -50,7 +50,7 @@ export default function ServicesSection() {
             {/* Image */}
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src="/home/cali-1.JPG"
                 alt="Caligrafía artesanal"
                 fill
                 className="object-cover"
