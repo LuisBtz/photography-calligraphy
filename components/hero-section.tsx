@@ -16,6 +16,11 @@ export default function HeroSection() {
         <div className="grid grid-cols-6 md:grid-cols-12 gap-4 md:gap-8">
           {/* Left Section - 6 columns */}
           <div className="col-span-6 space-y-6 md:space-y-8">
+            {/* Nombre del fotógrafo */}
+            <div className="inline-block">
+              <span className="bg-black text-white px-4 py-2 text-sm md:text-base font-black">Luis Benítez</span>
+            </div>
+
             {/* Main Heading */}
             <h1 className="font-condensed-black text-black text-3xl sm:text-4xl md:text-5xl lg:text-[55px] leading-tight">
               Fotografía & Caligrafía en Monterrey
@@ -55,12 +60,12 @@ export default function HeroSection() {
 
           {/* Right Section - 5 columns on desktop, full width on mobile */}
           <div className="col-span-6 md:col-span-5 mt-8 md:mt-0">
-            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full">
+            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full overflow-hidden">
               <Image
                 src="/home/hero-2.webp"
                 alt="Fotografía profesional"
                 fill
-                className="object-cover"
+                className="object-cover filter grayscale transition-all duration-500 hover:grayscale-0"
               />
             </div>
           </div>
