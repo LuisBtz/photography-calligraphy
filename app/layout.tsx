@@ -35,6 +35,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.png", // Ruta al favicon para la mayoría de los navegadores
+    shortcut: "/favicon.png", // Para compatibilidad con algunos navegadores antiguos
+  },
     generator: 'v0.dev'
 }
 
