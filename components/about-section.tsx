@@ -100,7 +100,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="aspect-[4/5] relative">
               <Image
-                src="/home/hero-2.webp"
+                src="/home/about-1.webp"
                 alt="Luis Benítez - Fotógrafo profesional"
                 fill
                 className="object-cover"

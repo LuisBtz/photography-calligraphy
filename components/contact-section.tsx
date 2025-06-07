@@ -139,7 +139,7 @@ export default function ContactSection() {
           <div className="relative">
             <div className="aspect-[4/5] relative">
               <Image
-                src="/home/contacto-1.webp"
+                src="/home/cta-1.webp"
                 alt="Contacto - Fotografía profesional"
                 fill
                 className="object-cover"
