@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const galleryImages = [
   {
-    src: "/photos/benito.webp",
+    src: "/photos/FerCynthia-f-31.webp",
     alt: "Benito bostezando",
   },
   {
@@ -23,7 +23,7 @@ const galleryImages = [
     alt: "Amigos hablando",
   },
   {
-    src: "/placeholder.svg?height=700&width=500",
+    src: "/photos/benito.webp",
     alt: "Fotografía de arquitectura",
   },
 ]

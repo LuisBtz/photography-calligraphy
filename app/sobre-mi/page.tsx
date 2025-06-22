@@ -16,7 +16,7 @@ export default function SobreMiPage() {
                 <div className="relative">
                   <div className="aspect-[3/4] relative overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=800&width=600"
+                      src="/home/hero-2.webp"
                       alt="Retrato profesional"
                       fill
                       className="object-cover"
@@ -31,7 +31,7 @@ export default function SobreMiPage() {
               <div className="col-span-6 md:col-span-7 space-y-8">
                 <div className="space-y-6">
                   <h1 className="font-condensed-black text-black text-3xl sm:text-4xl md:text-5xl lg:text-[55px] leading-tight">
-                    Hola, soy [Tu Nombre]
+                    Hola, soy [Luis Benítez]
                   </h1>
                   <div className="space-y-4">
                     <div className="w-16 h-px bg-black"></div>
@@ -100,7 +100,7 @@ export default function SobreMiPage() {
                   <div className="space-y-4">
                     <div className="relative aspect-[3/4]">
                       <Image
-                        src="/placeholder.svg?height=400&width=300"
+                        src="/about/ph-1.webp"
                         alt="Fotografía de retrato"
                         fill
                         className="object-cover"
@@ -108,7 +108,7 @@ export default function SobreMiPage() {
                     </div>
                     <div className="relative aspect-[4/3]">
                       <Image
-                        src="/placeholder.svg?height=300&width=400"
+                        src="/about/ph-3.webp"
                         alt="Fotografía de producto"
                         fill
                         className="object-cover"
@@ -118,7 +118,7 @@ export default function SobreMiPage() {
                   <div className="space-y-4 pt-8">
                     <div className="relative aspect-[4/3]">
                       <Image
-                        src="/placeholder.svg?height=300&width=400"
+                        src="/about/ph-4.webp"
                         alt="Fotografía de evento"
                         fill
                         className="object-cover"
@@ -126,7 +126,7 @@ export default function SobreMiPage() {
                     </div>
                     <div className="relative aspect-[3/4]">
                       <Image
-                        src="/placeholder.svg?height=400&width=300"
+                        src="/about/ph-2.webp"
                         alt="Fotografía artística"
                         fill
                         className="object-cover"
@@ -149,7 +149,7 @@ export default function SobreMiPage() {
                   {/* Main calligraphy image */}
                   <div className="relative aspect-[4/3] mb-6">
                     <Image
-                      src="/placeholder.svg?height=400&width=600"
+                      src="/about/cali-2.webp"
                       alt="Caligrafía artesanal"
                       fill
                       className="object-cover"
@@ -160,7 +160,7 @@ export default function SobreMiPage() {
                   <div className="grid grid-cols-3 gap-3">
                     <div className="relative aspect-square">
                       <Image
-                        src="/placeholder.svg?height=200&width=200"
+                        src="/about/cal1.webp"
                         alt="Invitación de boda"
                         fill
                         className="object-cover"
@@ -168,7 +168,7 @@ export default function SobreMiPage() {
                     </div>
                     <div className="relative aspect-square">
                       <Image
-                        src="/placeholder.svg?height=200&width=200"
+                        src="/about/cal-3.webp"
                         alt="Caligrafía personalizada"
                         fill
                         className="object-cover"
@@ -176,7 +176,7 @@ export default function SobreMiPage() {
                     </div>
                     <div className="relative aspect-square">
                       <Image
-                        src="/placeholder.svg?height=200&width=200"
+                        src="/about/cal-4.webp"
                         alt="Lettering artístico"
                         fill
                         className="object-cover"

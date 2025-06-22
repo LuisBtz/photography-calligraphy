@@ -16,7 +16,7 @@ export default function ServicesSection() {
             {/* Image */}
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src="/photos/FerCynthia-f-32.webp"
                 alt="Fotografía profesional"
                 fill
                 className="object-cover"
@@ -66,10 +66,10 @@ export default function ServicesSection() {
             {/* CTA */}
             <div className="pt-2">
               <Link
-                href="/caligrafia"
+                href="/contacto"
                 className="inline-block bg-black text-white font-bold text-base px-8 py-4 hover:bg-gray-800 transition-colors duration-200"
               >
-                Explorar caligrafía
+                Cotizar proyecto
               </Link>
             </div>
           </div>
