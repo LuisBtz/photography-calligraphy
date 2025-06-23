@@ -5,6 +5,7 @@ description: "Imágenes profesionales que hacen que tus productos destaquen y ve
 price: "$1,800 MXN"
 duration: "2-4 horas"
 category: "fotografia"
+feature: "/servicios/producto.webp"
 featured: false
 order: 4
 deliverables:

@@ -5,6 +5,7 @@ description: "Captura tu esencia única con sesiones fotográficas personalizada
 price: "$2,500 MXN"
 duration: "1-2 horas"
 category: "fotografia"
+feature: "/servicios/sesion1.webp"
 featured: true
 order: 1
 deliverables:
@@ -25,7 +26,7 @@ process:
     title: "Sesión fotográfica"
     description: "Capturamos imágenes increíbles en un ambiente relajado y profesional."
 gallery:
-  - src: "/placeholder.svg?height=600&width=480"
+  - src: "/about/ph-1.webp"
     alt: "Retrato profesional en estudio"
   - src: "/placeholder.svg?height=400&width=600"
     alt: "Sesión familiar al aire libre"

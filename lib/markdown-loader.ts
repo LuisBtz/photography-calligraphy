@@ -4,6 +4,7 @@ import matter from "gray-matter"
 
 export interface ServiceData {
   title: string
+  feature: string
   subtitle: string
   description: string
   longDescription: string
@@ -35,6 +36,7 @@ export interface ServiceData {
 export interface ServiceMetadata {
   slug: string
   title: string
+  feature: string
   subtitle: string
   description: string
   price: string
@@ -61,6 +63,7 @@ export function getAllServices(): ServiceMetadata[] {
           slug,
           title: data.title,
           subtitle: data.subtitle,
+          feature: data.feature,
           description: data.description,
           price: data.price,
           duration: data.duration,
@@ -78,15 +81,15 @@ export function getAllServices(): ServiceMetadata[] {
   }
 }
 
-export function getServiceBySlug(slug: string): ServiceData | null {
+export async function getServiceBySlug(slug: string): Promise<ServiceData | null> {
   try {
     const fullPath = path.join(servicesDirectory, `${slug}.md`)
 
-    if (!fs.existsSync(fullPath)) {
-      return null
-    }
+    // Verifica si existe el archivo
+    await fs.promises.access(fullPath, fs.constants.F_OK)
 
-    const fileContents = fs.readFileSync(fullPath, "utf8")
+    // Lee el archivo de forma asincrónica
+    const fileContents = await fs.promises.readFile(fullPath, "utf8")
     const { data, content } = matter(fileContents)
 
     // Parse the markdown content sections
@@ -94,6 +97,7 @@ export function getServiceBySlug(slug: string): ServiceData | null {
 
     return {
       title: data.title,
+      feature: data.feature,
       subtitle: data.subtitle,
       description: data.description,
       longDescription: sections.longDescription || data.description,
@@ -127,4 +131,10 @@ function parseMarkdownSections(content: string): { longDescription?: string } {
 export function getServicesByCategory(category: string): ServiceMetadata[] {
   const allServices = getAllServices()
   return allServices.filter((service) => service.category === category)
+}
+
+
+export function getAllServiceSlugs(): string[] {
+  const services = getAllServices();
+  return services.map((service) => service.slug);
 }

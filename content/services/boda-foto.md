@@ -5,6 +5,7 @@ description: "Documenta cada momento mágico de tu boda con un estilo artístico
 price: "$8,500 MXN"
 duration: "8-10 horas"
 category: "fotografia"
+feature: "/photos/FerCynthia-f-31.webp"
 featured: true
 order: 2
 deliverables:

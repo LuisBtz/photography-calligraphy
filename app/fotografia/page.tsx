@@ -42,7 +42,7 @@ export default function FotografiaPage() {
                   <div className="relative">
                     <div className="aspect-[3/2] relative">
                       <Image
-                        src="/servicios/sesion1.webp"
+                        src={service.feature}
                         alt={service.title}
                         fill
                         className="object-cover"

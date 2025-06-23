@@ -5,6 +5,7 @@ description: "La combinación perfecta de fotografía profesional y videografía
 price: "$15,000 MXN"
 duration: "10-12 horas"
 category: "fotografia"
+feature: "/photos/FerCynthia-f-32.webp"
 featured: true
 order: 3
 deliverables:
