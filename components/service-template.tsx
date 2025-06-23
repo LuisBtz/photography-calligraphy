@@ -158,7 +158,7 @@ export default function ServiceTemplate({ serviceData, serviceId }: ServiceTempl
                     <div className="font-regular text-gray-500 text-sm">Duración</div>
                   </div>
                   <div>
-                    <div className="font-condensed-black text-black text-xl">{serviceData.deliverables.length}+</div>
+                    <div className="font-condensed-black text-black text-xl">{serviceData.deliverables[0].slice(0, 3)}</div>
                     <div className="font-regular text-gray-500 text-sm">Entregables</div>
                   </div>
                 </div>

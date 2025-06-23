@@ -40,9 +40,7 @@ gallery:
     alt: "Sesión corporativa"
 features:
   - "Sesión personalizada según tu estilo"
-  - "Múltiples locaciones disponibles"
   - "Dirección profesional durante la sesión"
-  - "Edición artística de cada imagen"
   - "Entrega en 7-10 días hábiles"
   - "Garantía de satisfacción 100%"
 testimonials:
@@ -63,8 +61,6 @@ faq:
     answer: "Las sesiones típicamente duran entre 1 y 2 horas, dependiendo del tipo de sesión y la cantidad de looks o locaciones que queramos incluir."
   - question: "¿Puedo traer cambios de ropa?"
     answer: "¡Por supuesto! Recomiendo traer 2-3 outfits diferentes para tener variedad en las fotos. Te daré consejos sobre qué colores y estilos funcionan mejor."
-  - question: "¿Las sesiones pueden ser en exteriores?"
-    answer: "Sí, ofrezco sesiones tanto en estudio como en exteriores. Tengo varias locaciones favoritas en Monterrey, o podemos elegir un lugar que sea especial para ti."
   - question: "¿Qué pasa si llueve el día de la sesión?"
     answer: "Si el clima no coopera, podemos reprogramar sin costo adicional o movernos a una locación interior. Tu comodidad y las mejores condiciones para las fotos son mi prioridad."
 ---
