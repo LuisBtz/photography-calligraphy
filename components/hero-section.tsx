@@ -60,7 +60,7 @@ export default function HeroSection() {
 
           {/* Right Section - 5 columns on desktop, full width on mobile */}
           <div className="col-span-6 md:col-span-5 mt-8 md:mt-0">
-            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full overflow-hidden">
+            <div className="aspect-[4/5] relative">
               <Image
                 src="/home/hero-2.webp"
                 alt="Fotografía profesional"
