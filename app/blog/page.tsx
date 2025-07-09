@@ -6,7 +6,7 @@ import Link from "next/link"
 import { getAllBlogPosts } from "@/lib/blog-loader"
 
 export const metadata = {
-  title: "Blog | Fotografía y Caligrafía",
+  title: "Blog | Fotografía",
   description:
     "Descubre consejos, técnicas y tendencias en fotografía y caligrafía. Aprende de la experiencia de un profesional en Monterrey.",
   keywords: "blog fotografía, consejos fotografía, técnicas caligrafía, tutoriales",
@@ -35,7 +35,7 @@ export default function BlogPage() {
           <div className="max-w-[1100px] mx-auto px-4">
             <div className="text-center space-y-8 mb-16">
               <h1 className="font-condensed-black text-black text-3xl sm:text-4xl md:text-5xl lg:text-[55px] leading-tight">
-                Blog de Fotografía y Caligrafía
+                Blog de Fotografía
               </h1>
               <div className="flex justify-center">
                 <div className="w-24 h-px bg-black"></div>
@@ -199,7 +199,7 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="w-full bg-black text-white py-20">
+        {/* <section className="w-full bg-black text-white py-20">
           <div className="max-w-[1100px] mx-auto px-4 text-center">
             <div className="max-w-2xl mx-auto space-y-6">
               <h2 className="font-condensed-black text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight">
@@ -228,7 +228,7 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact CTA */}
         <section className="w-full bg-white py-20">

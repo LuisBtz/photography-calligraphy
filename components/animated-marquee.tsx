@@ -9,7 +9,6 @@ export default function AnimatedMarquee() {
     "Momentos auténticos, memorias eternas",
     "Calidad visual para destacar tu marca",
     "Historias de amor en cada foto",
-    "Letras que comunican con arte",
   ]
 
   return (

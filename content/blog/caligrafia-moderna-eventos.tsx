@@ -5,7 +5,7 @@ description: "Explora cómo la caligrafía contemporánea puede transformar invi
 date: "2024-01-08"
 readTime: "7 min lectura"
 category: "Caligrafía"
-featured: true
+featured: false
 thumbnail: "/placeholder.svg?height=400&width=600"
 author: "Tu Nombre"
 tags: ["caligrafía", "bodas", "eventos", "invitaciones"]

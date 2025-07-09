@@ -1,15 +1,15 @@
 /*
 ---
-title: "Guía completa de elementos de contenido en fotografía"
-description: "Una demostración completa de todos los elementos de contenido disponibles: párrafos, encabezados, listas, código, imágenes y más. Aprende a estructurar contenido efectivo."
-date: "2024-01-20"
+title: "Las mejores locaciones para sesiones de fotos en Monterrey"
+description: "Monterrey es una ciudad vibrante que ofrece escenarios increíbles para cualquier tipo de sesión fotográfica: desde retratos personales hasta sesiones de pareja, producto o branding. Como fotógrafo profesional, me gusta explorar sitios que no solo sean visualmente atractivos, sino que también se adapten al estilo y personalidad de cada cliente."
+date: "2024-07-7"
 readTime: "8 min lectura"
-category: "Técnicas"
-featured: false
+category: "Fotografía"
+featured: true
 thumbnail: "/placeholder.svg?height=400&width=600"
-author: "Tu Nombre"
+author: "Luis Benítez"
 tags: ["técnicas", "contenido", "tutorial", "ejemplos"]
-status: "unpublish"
+status: "published"
 ---
 */
 
