@@ -12,17 +12,16 @@ export const metadata = {
   keywords: "blog fotografía, consejos fotografía, técnicas caligrafía, tutoriales",
 }
 
-// Add this function at the top of the component
-const isDevMode = process.env.NODE_ENV === "development"
+// ✅ async component
+export default async function BlogPage() {
+  const isDevMode = process.env.NODE_ENV === "development"
+  const posts = await getAllBlogPosts(isDevMode) // ✅ await here
 
-// Update the component to handle status
-export default function BlogPage() {
-  const posts = getAllBlogPosts(isDevMode) // Include unpublished in dev mode
   const featuredPost =
     posts.find((post) => post.featured && post.status === "published") ||
     posts.find((post) => post.status === "published")
-  const regularPosts = posts.filter((post) => post.slug !== featuredPost?.slug)
 
+  const regularPosts = posts.filter((post) => post.slug !== featuredPost?.slug)
   const categories = ["Todos", "Fotografía", "Caligrafía", "Consejos", "Técnicas"]
 
   return (
@@ -51,7 +50,6 @@ export default function BlogPage() {
               <div className="mb-20">
                 <div className="bg-gray-50 overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    {/* Image */}
                     <div className="relative aspect-[4/3] lg:aspect-auto">
                       <Image
                         src={featuredPost.thumbnail || "/placeholder.svg?height=500&width=600"}
@@ -65,7 +63,6 @@ export default function BlogPage() {
                       </div>
                     </div>
 
-                    {/* Content */}
                     <div className="p-8 lg:p-12 flex flex-col justify-center">
                       <div className="space-y-6">
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
@@ -130,7 +127,6 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularPosts.map((post) => (
                 <article key={post.slug} className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
-                  {/* Post Image */}
                   <div className="relative aspect-[4/3]">
                     <Image
                       src={post.thumbnail || "/placeholder.svg?height=300&width=400"}
@@ -141,7 +137,6 @@ export default function BlogPage() {
                     <div className="absolute top-4 left-4 bg-black text-white font-bold text-xs px-2 py-1">
                       {post.category}
                     </div>
-                    {/* Status indicator for non-published posts */}
                     {post.status !== "published" && isDevMode && (
                       <div
                         className={`absolute top-4 right-4 text-white font-bold text-xs px-2 py-1 ${
@@ -153,28 +148,23 @@ export default function BlogPage() {
                     )}
                   </div>
 
-                  {/* Post Content */}
                   <div className="p-6 space-y-4">
-                    {/* Meta */}
                     <div className="flex items-center space-x-3 text-sm text-gray-500">
                       <span>{post.date}</span>
                       <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
                       <span>{post.readTime}</span>
                     </div>
 
-                    {/* Title */}
                     <h3 className="font-condensed-black text-black text-xl leading-tight">
                       <Link href={`/blog/${post.slug}`} className="hover:underline">
                         {post.title}
                       </Link>
                     </h3>
 
-                    {/* Description */}
                     <p className="font-regular text-gray-600 text-sm leading-relaxed line-clamp-3">
                       {post.description}
                     </p>
 
-                    {/* Read More */}
                     <div className="pt-2">
                       <Link
                         href={`/blog/${post.slug}`}
@@ -197,38 +187,6 @@ export default function BlogPage() {
             </div>
           </div>
         </section>
-
-        {/* Newsletter Signup */}
-        {/* <section className="w-full bg-black text-white py-20">
-          <div className="max-w-[1100px] mx-auto px-4 text-center">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="font-condensed-black text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight">
-                No te pierdas ningún consejo
-              </h2>
-              <p className="font-regular text-white/90 text-lg leading-relaxed">
-                Suscríbete a nuestro newsletter y recibe los mejores consejos de fotografía y caligrafía directamente en
-                tu inbox.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  className="flex-1 px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-white"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-white text-black font-bold px-6 py-3 hover:bg-gray-200 transition-colors duration-200"
-                >
-                  Suscribirse
-                </button>
-              </form>
-              <p className="text-white/60 text-sm">
-                Sin spam. Solo contenido valioso. Puedes cancelar en cualquier momento.
-              </p>
-            </div>
-          </div>
-        </section> */}
 
         {/* Contact CTA */}
         <section className="w-full bg-white py-20">

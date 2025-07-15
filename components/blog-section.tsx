@@ -2,8 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { getAllBlogPosts } from "@/lib/blog-loader"
 
-export default function BlogSection() {
-  const blogPosts = getAllBlogPosts().slice(0, 5) // Get first 5 published posts
+export default async function BlogSection() {
+  const blogPosts = (await getAllBlogPosts()).slice(0, 5)
 
   return (
     <section className="w-full bg-white py-20 md:py-32">
@@ -62,7 +62,7 @@ export default function BlogSection() {
                   <div className="pt-2">
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="font-bold text-black text-base hover:underline transition-all duration-200 inline-flex items-center"
+                      className="font-bold text-black text-base hover:underline transition-all duration-200 inline-flex items-center group"
                     >
                       Leer más
                       <svg

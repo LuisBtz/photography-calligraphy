@@ -1,49 +1,33 @@
 import { notFound } from "next/navigation"
-import { getBlogPostBySlug, getAllBlogPosts } from "@/lib/blog-loader"
+import { Metadata } from "next"
 import BlogPostTemplate from "@/components/blog-post-template"
+import { getPostContentBySlug, getAllBlogPosts } from "@/lib/blog-loader"
 
+// ✅ Tipos
 interface BlogPostPageProps {
   params: {
     slug: string
   }
 }
 
-export async function generateStaticParams() {
-  const posts = getAllBlogPosts()
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
-}
-
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+// ✅ Metadata dinámica
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const allPosts = await getAllBlogPosts()
+  const post = allPosts.find((p) => p.slug === params.slug)
 
   if (!post) {
-    return {
-      title: "Post no encontrado",
-    }
+    return { title: "Post no encontrado" }
   }
 
   return {
     title: `${post.title} | Blog de Fotografía`,
     description: post.description,
-    keywords: `${post.tags.join(", ")}, fotografía monterrey, blog fotografía`,
-    authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.description,
-      type: "article",
-      locale: "es_ES",
       publishedTime: post.date,
       authors: [post.author],
-      images: [
-        {
-          url: post.thumbnail,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
+      images: [{ url: post.thumbnail, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
@@ -54,12 +38,26 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+// ✅ Genera las rutas estáticas
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
 
-  if (!post) {
+// ✅ Página del blog post
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = await getPostContentBySlug(params.slug)
+
+  if (!post || post.metadata.status !== "published") {
     notFound()
   }
 
-  return <BlogPostTemplate post={post} />
+  const allPosts = await getAllBlogPosts()
+  const relatedPosts = allPosts.filter(
+    (p) => p.slug !== post.metadata.slug && p.category === post.metadata.category
+  ).slice(0, 3)
+
+  return <BlogPostTemplate post={post} relatedPosts={relatedPosts} />
 }

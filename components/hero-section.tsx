@@ -23,7 +23,7 @@ export default function HeroSection() {
 
             {/* Main Heading */}
             <h1 className="font-condensed-black text-black text-3xl sm:text-4xl md:text-5xl lg:text-[55px] leading-tight">
-              Fotografía & Caligrafía en Monterrey
+              Fotografía profesional en Monterrey
             </h1>
 
             {/* Caption with lines */}
@@ -31,7 +31,7 @@ export default function HeroSection() {
               <div className="space-y-3">
                 <div className="w-full h-px bg-black"></div>
                 <p className="font-regular text-black text-lg sm:text-xl md:text-2xl lg:text-[24px] text-left">
-                  Captura emociones, escribe memorias.
+                  Historias visuales que tocan el corazón.
                 </p>
                 <div className="w-full h-px bg-black"></div>
               </div>
@@ -39,9 +39,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="font-regular text-black text-sm sm:text-base md:text-base lg:text-[16px] leading-relaxed">
-              Ya sea a través del lente o la tinta, doy vida a tus momentos más importantes. Retratos únicos, productos
-              irresistibles y caligrafía artesanal para bodas, eventos y detalles personalizados. Cada imagen y cada
-              letra cuentan tu historia con estilo.
+              Cada sesión es una oportunidad para conectar contigo y tu historia. Me especializo en retratos naturales y fotografía de eventos íntimos con un enfoque auténtico y personal.
             </p>
 
             {/* CTA Button */}

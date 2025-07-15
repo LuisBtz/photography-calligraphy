@@ -14,21 +14,16 @@ export default function AboutSection() {
               </h2>
               <div className="w-24 h-px bg-black"></div>
               <p className="font-regular text-gray-600 text-lg md:text-xl leading-relaxed">
-                Con más de 8 años de experiencia, me especializo en capturar la esencia única de cada momento y
-                transformarla en arte visual que perdura en el tiempo.
+                Durante más de 8 años he desarrollado una visión fotográfica centrada en la emoción, la conexión y el valor de capturar tu historia. Mi propósito es ofrecer no solo imágenes bellas, sino recuerdos que resuenen y permanezcan.
               </p>
             </div>
 
             <div className="space-y-6">
               <p className="font-regular text-gray-600 text-base leading-relaxed">
-                Mi enfoque combina técnica profesional con sensibilidad artística, creando imágenes que no solo
-                documentan momentos, sino que cuentan historias profundas y emotivas. Cada proyecto es una oportunidad
-                para explorar nuevas perspectivas y crear algo verdaderamente único.
+                Mi forma de trabajar es íntima y colaborativa. Busco que cada persona se sienta cómoda, vista y escuchada. Así nacen retratos sinceros, fotografías de momentos reales, y sesiones donde el tiempo parece detenerse.
               </p>
               <p className="font-regular text-gray-600 text-base leading-relaxed">
-                Además de la fotografía, mi pasión por la caligrafía me permite ofrecer servicios únicos que combinan la
-                belleza visual con el arte de la escritura, creando piezas personalizadas que añaden un toque especial a
-                cualquier evento o proyecto.
+                Cada disparo es un acto de atención. Observar con sensibilidad, componer con intención y entregarte imágenes que reflejen quién eres: eso es lo que me mueve cada día.
               </p>
             </div>
 
